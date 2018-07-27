@@ -10,4 +10,4 @@ eureka:
       defaultZone: http://edward:123@eurekaserver1:8761/eureka  #,http://edward:123@eurekaserver2:8001/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
-env: dev    
+  env: dev    
