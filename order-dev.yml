@@ -4,22 +4,6 @@ server:
 spring:
   application:
     name: order
-eureka:
-  client:
-    service-url:
-      defaultZone: http://edward:123@eurekaserver1:8761/eureka  #,http://edward:123@eurekaserver2:8001/eureka
-  instance:
-    instance-id: ${spring.application.name}:${server.port}
-  
-spring:
-  profiles:
-    active: dev  # 这个 dev 表示的是 git 上 order-dev.yml 中 的 dev !!!
-  cloud:
-    config: 
-      uri:  http://localhost:20000  #config server 的地址 ！！   
-      label:  master
-  application: 
-    name:   order   # 这个 dev 表示的是 git 上 order-dev.yml 中 的 order !!!
   rabbitmq:
     host: 192.168.10.114
     username: hqq
@@ -28,4 +12,10 @@ spring:
 management:
   security:
     enabled: false
-env: dev  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://edward:123@eurekaserver1:8761/eureka  #,http://edward:123@eurekaserver2:8001/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+env:  dev
